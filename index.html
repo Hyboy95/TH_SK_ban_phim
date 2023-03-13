@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TH_SK_ban_phim</title>
+</head>
+<body>
+  <img id="myImage" src="https://genk.mediacdn.vn/2019/5/23/image002-1558599409632434775215.png" alt="Ảnh Nobita">
+</body>
+</html>
+<script>
+    function init() {
+        img.style.width = '400px';
+        img.style.position = 'absolute';
+        img.style.top = '0';
+        img.style.left = '0';
+    }
+
+    let img = document.getElementById("myImage");
+    let x = 0;
+    let y = 0;
+    let step = 10;
+
+    document.addEventListener("keydown", function(event) {
+        switch(event.keyCode) {
+            case 37: // left arrow key
+                x -= step;
+                break;
+            case 38: // up arrow key
+                y -= step;
+                break;
+            case 39: // right arrow key
+                x += step;
+                break;
+            case 40: // down arrow key
+                y += step;
+                break;
+        }
+        img.style.top = y + "px";
+        img.style.left = x + "px";
+    });
+    window.onload = init;
+</script>
